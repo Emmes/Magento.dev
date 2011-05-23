@@ -1,0 +1,18 @@
+<?php
+/**
+ * Category left navigation
+ *
+ */
+?>
+<?php
+$categories = Mage::getModel('catalog/category')->load(2)->getChildren();
+$catIds = explode(',',$cats);
+?>
+<div class="block">
+<ul id="nav_category" class="nav_category">
+	<?php foreach ($this->getStoreCategories() as $_category): ?>
+		<?php echo $this->drawItem($_category) ?>
+	<?php endforeach ?>
+</ul>
+</div>
+<?php echo $this->getChildHtml('topLeftLinks') ?>
