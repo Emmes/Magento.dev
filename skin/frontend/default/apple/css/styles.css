@@ -93,11 +93,11 @@ ul,ol         { list-style:none; }
 .page-print { background:#fff; padding:20px; text-align:left; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { padding:20px; text-align:left; }
-.main-container {}
+.main-container { width:888px; }
 .main {}
 
 /* Base Columns */
-.col-left { float:left; width:150px; border:1px solid #ddd; padding:5px 5px 0; }
+.col-left { float:left; width:146px; border:1px solid #ddd; padding:5px 0; margin-left:12px; }
 .col-main { float:left; width:716px; border:1px solid #ddd; padding:5px; }
 .col-right { float:right; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
 
@@ -135,6 +135,7 @@ ul,ol         { list-style:none; }
 input,select,textarea,button { font:12px Arial, Helvetica, sans-serif; vertical-align:middle; color:#000; }
 input.input-text,select,textarea { background:#fff; border:1px solid #ddd; }
 input.input-text,textarea { padding:2px; }
+.newsletter input.input-text { width:118px; }
 select { padding:1px; }
 select option { padding-right:10px; }
 select.multiselect option { border-bottom:1px solid #ddd; padding:2px 5px; }
@@ -488,6 +489,8 @@ tr.summary-details-excluded { font-style:italic; }
 #nav li .shown-sub ul.shown-sub,
 #nav li .shown-sub li div.shown-sub { left:100px; }
 .nav_category a { text-decoration:none; }
+.nav_category a:hover {}
+	
 /********** Navigation > */
 /* ======================================================================================= */
 
