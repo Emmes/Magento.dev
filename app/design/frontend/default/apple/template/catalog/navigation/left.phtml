@@ -11,7 +11,7 @@ $catIds = explode(',',$cats);
 <div class="block">
 <ul id="nav_category" class="nav_category">
 	<?php foreach ($this->getStoreCategories() as $_category): ?>
-		<?php echo $this->drawItem($_category) ?>
+		<div class="nav_entries"><?php echo $this->drawItem($_category) ?></div>
 	<?php endforeach ?>
 </ul>
 </div>

@@ -84,6 +84,7 @@ ul,ol         { list-style:none; }
 .no-margin    { margin:0 !important; }
 .no-padding   { padding:0 !important; }
 .no-bg        { background:none !important; }
+.clearer      { clear:both; }
 /* ======================================================================================= */
 
 
@@ -93,13 +94,13 @@ ul,ol         { list-style:none; }
 .page-print { background:#fff; padding:20px; text-align:left; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { padding:20px; text-align:left; }
-.main-container { width:888px; }
+.main-container { background-color:#d5dde6; width:888px; }
 .main {}
 
 /* Base Columns */
-.col-left { float:left; width:146px; border:1px solid #ddd; padding:5px 0; margin-left:12px; }
-.col-main { float:left; width:716px; border:1px solid #ddd; padding:5px; }
-.col-right { float:right; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
+.col-left { float:left; width:156px; border:1px solid #8b8b8b; padding:5px 0; margin-left:12px; background-color:#D5DDE6; }
+.col-main { float:left; width:716px; border:1px solid #8b8b8b; background-color:#fff; }
+.col-right { float:right; width:230px; border:1px solid #8b8b8b; padding:5px 5px 0; }
 
 /* 1 Column Layout */
 .col1-layout .col-main { float:none; width:auto; }
@@ -307,7 +308,7 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 .sub-title { clear:both; }
 
 /* Pager */
-.pager { border:1px solid #ddd; padding:5px; margin:5px 0; text-align:center; }
+.pager { border:1px solid #ddd; padding:5px; text-align:center; }
 .pager .amount { float:left; }
 .pager .limiter { float:right; }
 .pager .pages { margin:0 135px; }
@@ -316,14 +317,14 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 .pager .pages .current {}
 
 /* Sorter */
-.sorter { border:1px solid #ddd; padding:5px; margin:5px 0; }
+.sorter { border:1px solid #8b8b8b; padding:5px; }
 .sorter .view-mode { float:left; }
 .sorter .sort-by { float:right; }
 .sorter .link-feed {}
 
 /* Toolbar */
 .toolbar {}
-.toolbar .pager {}
+.toolbar .pager { border:1px solid #8b8b8b; }
 .toolbar .sorter {}
 .toolbar-bottom {}
 
@@ -488,8 +489,9 @@ tr.summary-details-excluded { font-style:italic; }
 #nav li div.shown-sub { left:0; z-index:999; }
 #nav li .shown-sub ul.shown-sub,
 #nav li .shown-sub li div.shown-sub { left:100px; }
-.nav_category a { text-decoration:none; }
-.nav_category a:hover {}
+.nav_entries { background-image: url("../images/i-folder.gif"); background-position:2px; background-repeat: no-repeat; padding-left:22px; }
+.nav_category a { color:#000; text-decoration:none; }
+.nav_category a:hover { text-decoration:underline; }
 	
 /********** Navigation > */
 /* ======================================================================================= */
@@ -619,12 +621,14 @@ tr.summary-details-excluded { font-style:italic; }
 .col1-layout .products-grid { width:790px; margin:0 auto; }
 
 /* View Type: List */
-.products-list li.item { border-bottom:1px solid #ddd; padding:12px 10px; }
+.products-list li.item.even {}
+.products-list li.item.odd { background-color:#e7f0fe; }
 .products-list li.item.last { border-bottom:0; }
 .products-list .product-image { float:left; width:135px; height:135px; margin:0 0 10px; }
-.products-list .product-shop { margin-left:150px; }
-.products-list .product-name { margin:0 0 5px; font-weight:bold; font-size:13px; }
-.products-list .product-name a {}
+.products-list .product-shop { display:block; margin-left:10px; }
+.products-list .product-shop a { color:#000; } 
+.products-list .product-name { background:url(../images/txt.png) no-repeat; padding-left:25px; margin:2px 0; width:530px; float:left; }
+.products-list .created-at { padding-left:25px; float:left; }
 .products-list .price-box { float:left; margin:3px 13px 5px 0; }
 .products-list .availability { float:left; margin:3px 0 0; }
 .products-list .desc { clear:both; padding:6px 0 0; margin:0 0 15px; line-height:1.35; }
@@ -633,6 +637,7 @@ tr.summary-details-excluded { font-style:italic; }
 .products-list .add-to-links li { display:inline; }
 .products-list .add-to-links .separator { display:inline; margin:0 2px; }
 /* ======================================================================================= */
+
 
 
 /* Product View ========================================================================== */
