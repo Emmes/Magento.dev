@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <dev_review>
+            <version>0.1.0</version>
+        </dev_review>
+    </modules>
+    <frontend>
+        <routers>
+	        <review>
+                <use>standard</use>
+                <args>
+                    <modules>  
+                        <dev_review before="Mage_Review">Dev_Review</dev_review>
+                    </modules>
+                </args>
+        	</review>
+        </routers>
+    </frontend>
+</config>

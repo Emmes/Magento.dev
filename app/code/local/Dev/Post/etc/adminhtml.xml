@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <cms>
+            <children>
+                <forum translate="title" module="tag">
+                    <title>Forum</title>
+                    <children>
+                        <all translate="title" module="tag">
+                            <title>Threads</title>
+                            <action>adminhtml/post/threads</action>
+                        </all>
+                        <pending translate="title" module="tag">
+                            <title>Posts</title>
+                            <action>adminhtml/post/posts</action>
+                        </pending>
+                    </children>
+                    <sort_order>60</sort_order>
+                </forum>
+             </children>
+        </cms>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <tag translate="title" module="tag">
+                                <title>Tags</title>
+                                <children>
+                                    <all translate="title">
+                                        <title>All Tags</title>
+                                    </all>
+                                    <pending translate="title">
+                                        <title>Pending Tags</title>
+                                    </pending>
+                                </children>
+                            </tag>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

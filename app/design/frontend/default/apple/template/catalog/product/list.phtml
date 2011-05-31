@@ -24,11 +24,11 @@
                     <div class="f-fix">
                         <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
                         <div class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></div>
-                        <?php if($_product->getRatingSummary()): ?>
+
                             <?php echo $this->getReviewsSummaryHtml($_product) ?>
-                        <?php endif; ?>
+
                         <div class="created-at">
-                            <?php echo $_product->getCreatedAt() ?>
+                            <?php echo date('d/m/Y - H:i', strtotime($_product->getCreatedAt())) ?>
                         </div>
                     </div>
                 </a>
@@ -38,8 +38,10 @@
     <?php endforeach; ?>
     </ol>
     <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
-    <div class="toolbar-bottom">
-        <?php echo $this->getToolbarHtml() ?>
-    </div>
 </div>
 <?php endif; ?>
+<div class="new-post">
+    <div class="actions">
+        <a href="post"><button type="submit" title="<?php echo $this->__('New Thread') ?>" class="button"><span><span><?php echo $this->__('New Thread') ?></span></span></button></a>
+    </div>
+</div>

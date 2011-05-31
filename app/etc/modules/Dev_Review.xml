@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Dev_Review>
+            <active>true</active>
+            <codePool>local</codePool>
+<!--            <depends>  -->
+<!--        		<mage_review></mage_review>-->
+<!--        	</depends>  -->
+        </Dev_Review>
+    </modules>
+</config>

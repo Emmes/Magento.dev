@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<profile_user_index>
+		<reference name="content"> 
+        	<block type="profile/profile" name="profile.profile" template="profile/profile.phtml"/> 
+    	</reference>
+	</profile_user_index>
+</layout>

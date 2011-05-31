@@ -1,0 +1,58 @@
+<?php
+/**
+ * Product list toolbar
+ *
+ * @see Mage_Catalog_Block_Product_List_Toolbar
+ */
+?>
+<?php if($this->getCollection()->getSize()): ?>
+<div class="toolbar">
+	<div class="sorter-article">
+	        <?php if( $this->isEnabledViewSwitcher() ): ?>
+        <p class="view-mode">
+            <?php $_modes = $this->getModes(); ?>
+            <?php if($_modes && count($_modes)>1): ?>
+            <label><?php echo $this->__('View as') ?>:</label>
+            <?php foreach ($this->getModes() as $_code=>$_label): ?>
+                <?php if($this->isModeActive($_code)): ?>
+                    <strong title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></strong>&nbsp;
+                <?php else: ?>
+                    <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a>&nbsp;
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <?php endif; ?>
+        </p>
+        <?php endif; ?>
+		<!--<select onchange="setLocation(this.value)">
+            <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
+                    <?php echo $this->__($_order) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+		--><?php if($this->getCurrentDirection() == 'desc'): ?>
+			<a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>">Artikel<img src="<?php echo $this->getSkinUrl('images/sort_arrow.png') ?>" alt="<?php echo $this->__('Set Ascending Direction') ?>" class="hv-middle" /></a>
+		<?php else: ?>
+			<a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>">Artikel<img src="<?php echo $this->getSkinUrl('images/sort_arrow_down.png') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="hv-middle" /></a>
+		<?php endif; ?>
+	</div>
+	<div class="sorter-answers">
+		<?php if($this->getCurrentDirection() == 'desc'): ?>
+			<a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>">Antworten<img src="<?php echo $this->getSkinUrl('images/sort_arrow.png') ?>" alt="<?php echo $this->__('Set Ascending Direction') ?>" class="hv-middle" /></a>
+		<?php else: ?>
+			<a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>">Antworten<img src="<?php echo $this->getSkinUrl('images/sort_arrow_down.png') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="hv-middle" /></a>
+		<?php endif; ?>
+	</div>
+	<div class="sorter-date">
+		<?php if($this->getCurrentDirection() == 'desc'): ?>
+			<a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>">Datum<img src="<?php echo $this->getSkinUrl('images/sort_arrow.png') ?>" alt="<?php echo $this->__('Set Ascending Direction') ?>" class="hv-middle" /></a>
+		<?php else: ?>
+			<a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>">Datum<img src="<?php echo $this->getSkinUrl('images/sort_arrow_down.png') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="hv-middle" /></a>
+		<?php endif; ?>
+	</div>
+	<div class="clearer"></div>
+
+</div>
+<?php endif ?>
+
+

@@ -1,29 +1,5 @@
 <?xml version="1.0"?>
 <!--
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     base_default
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
 
 Supported layout update handles (action):
 - catalog_product_gallery
@@ -43,6 +19,7 @@ Default layout, loads most of the pages
 -->
 
     <default>
+    	
 		<label>Catalog Category (Non-Anchor)</label>
         <reference name="left">
             <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
@@ -148,9 +125,9 @@ Category layered navigation layout
     <catalog_category_layered_nochildren translate="label">
         <label>Catalog Category (Without Subcategories)</label>
         <remove name="right.reports.product.viewed" />
-        <reference name="right">
-            <block type="reports/product_viewed" before="right.permanent.callout" name="left.reports.product.viewed" template="reports/product_viewed.phtml" />
-        </reference>
+<!--        <reference name="right">-->
+<!--            <block type="reports/product_viewed" before="right.permanent.callout" name="left.reports.product.viewed" template="reports/product_viewed.phtml" />-->
+<!--        </reference>-->
     </catalog_category_layered_nochildren>
 
 <!--
@@ -172,11 +149,11 @@ Compare products page
         </reference>
     </catalog_product_compare_index>
 
-    <customer_account_index>
-        <reference name="right">
-            <action method="unsetChild"><name>catalog.compare.sidebar</name></action>
-        </reference>
-    </customer_account_index>
+<!--    <customer_account_index>-->
+<!--        <reference name="right">-->
+<!--            <action method="unsetChild"><name>catalog.compare.sidebar</name></action>-->
+<!--        </reference>-->
+<!--    </customer_account_index>-->
 
 <!--
 Product view
@@ -214,7 +191,6 @@ Product view
                     <action method="setItemLimit"><type>upsell</type><limit>4</limit></action>
                 </block>
 
-                <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
                 <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
                     <action method="addToParentGroup"><group>detailed_info</group></action>
                 </block>
@@ -236,7 +212,7 @@ Product view
                         <action method="addOptionRenderer"><type>file</type><block>catalog/product_view_options_type_file</block><template>catalog/product/view/options/type/file.phtml</template></action>
                         <action method="addOptionRenderer"><type>select</type><block>catalog/product_view_options_type_select</block><template>catalog/product/view/options/type/select.phtml</template></action>
                         <action method="addOptionRenderer"><type>date</type><block>catalog/product_view_options_type_date</block><template>catalog/product/view/options/type/date.phtml</template></action>
-                </block>
+                	</block>
                         <block type="core/html_calendar" name="html_calendar" as="html_calendar" template="page/js/calendar.phtml"/>
                     </block>
                 <block type="catalog/product_view" name="product.info.options.wrapper.bottom" as="product_options_wrapper_bottom" template="catalog/product/view/options/wrapper/bottom.phtml" translate="label">
@@ -262,10 +238,20 @@ Product view
                 <action method="unsetCallChild"><child>container1</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
                 <action method="unsetCallChild"><child>container2</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
             </block>
+            <block type="review/product_view_list" name="product.info.product_additional_data" as="product_additional_data" template="review/product/view/list.phtml">
+	            <block type="review/form" name="product.review.form" as="review_form">
+	                <block type="page/html_wrapper" name="product.review.form.fields.before" as="form_fields_before" translate="label">
+	                    <label>Review Form Fields Before</label>
+	                    <action method="setMayBeInvisible"><value>1</value></action>
+		                
+	                </block>
+	            </block>
+	        </block>
+	        <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
         </reference>
-        <reference name="right">
-            <block type="catalog/product_list_related" name="catalog.product.related" before="-" template="catalog/product/list/related.phtml"/>
-        </reference>
+<!--        <reference name="right">-->
+<!--            <block type="catalog/product_list_related" name="catalog.product.related" before="-" template="catalog/product/list/related.phtml"/>-->
+<!--        </reference>-->
     </catalog_product_view>
 
 <!--

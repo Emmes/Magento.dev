@@ -5,7 +5,7 @@ body          { background-image: url("../images/bg.jpg"); background-position: 
 
 img           { border:0; vertical-align:top; }
 
-a             { color:#fff; text-decoration:underline; }
+a             { color:#000; text-decoration:underline; }
 a:hover       { text-decoration:none; }
 :focus        { outline:0; }
 
@@ -49,6 +49,7 @@ ul,ol         { list-style:none; }
 .a-right      { text-align:right !important; }
 .v-top        { vertical-align:top; }
 .v-middle     { vertical-align:middle; }
+.hv-middle    { float:right; padding-top:3px; padding-right:10px; }
 .f-left,
 .left         { float:left !important; }
 .f-right,
@@ -74,14 +75,14 @@ ul,ol         { list-style:none; }
 
 /* Base Columns */
 .col-left { float:left; width:156px; border:1px solid #8b8b8b; padding:5px 0; background-color:#D5DDE6; }
-.col-main { float:left; width:719px; background-color:#fff; }
+.col-main { float:left; width:699px; background-color:#fff; min-height:400px; }
 .col-right { float:right; width:230px; border:1px solid #8b8b8b; padding:5px 5px 0; }
 
 /* 1 Column Layout */
 .col1-layout .col-main { float:none; width:auto; }
 
 /* 2 Columns Layout */
-.col2-left-layout .col-main { float:right; }
+.col2-left-layout .col-main { float:right; padding: 10px; }
 .col2-right-layout .col-main {}
 
 /* 3 Columns Layout */
@@ -110,7 +111,7 @@ ul,ol         { list-style:none; }
 /* Form Elements */
 input,select,textarea,button { font:12px Arial, Helvetica, sans-serif; vertical-align:middle; color:#000; }
 input.input-text,select,textarea { background:#fff; border:1px solid #ddd; }
-input.input-text,textarea { padding:2px; }
+input.input-text,textarea { padding:2px; width:690px; }
 .newsletter input.input-text { width:118px; }
 select { padding:1px; }
 select option { padding-right:10px; }
@@ -151,8 +152,8 @@ p.control input.radio { margin-right:6px; }
 /*.form-list li.fields { margin-right:-15px; }*/
 .form-list .input-box { display:block; clear:both; width:260px; }
 .form-list .field { float:left; width:275px; }
-.form-list input.input-text { width:254px; }
-.form-list textarea { width:254px; height:10em; }
+.form-list input.input-text { width:690px; }
+.form-list textarea { width:690px; height:10em; }
 .form-list select { width:260px; }
 .form-list li.wide .input-box { width:535px; }
 .form-list li.wide input.input-text { width:529px; }
@@ -297,10 +298,14 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 .sorter .sort-by { float:right; }
 .sorter .link-feed {}
 .sorter-article {  }
-.sorter-article a { float:left; width:530px; height:15px; background:url(../images/sorterover.png); color:#000; text-decoration:none; }
-.sorter-article a:hover { background:url(../images/sorterover.png); }
-.sorter-date a { float:left; width:189px; background:url(../images/sorterover.png); color:#000; text-decoration:none; }
-.sorter-date a:hover { float:left; width:189px; background:url(../images/sorterover.png); }
+.sorter-article a { float:left; width:485px; height:15px; background:url(../images/sorter.png); color:#000; text-decoration:none; }
+.sorter-article a:hover { background:url(../images/sorter_hover.png); }
+.sorter-answers a { float:left; width:100px; background:url(../images/sorter.png); color:#000; text-decoration:none; }
+.sorter-answers a:hover { background:url(../images/sorter_hover.png); }
+.sorter-date a { float:left; width:100px; background:url(../images/sorter.png); color:#000; text-decoration:none; }
+.sorter-date a:hover { background:url(../images/sorter_hover.png); }
+.sorter-article img { float:right; }
+
 
 /* Toolbar */
 .toolbar {}
@@ -420,6 +425,7 @@ tr.summary-details-excluded { font-style:italic; }
 .header .welcome-msg { font-weight:bold; text-align:right; }
 .header .links { float:right; }
 .header .form-search { text-align:right; }
+.header .form-search input.input-text, textarea { width:254px; }
 .header .form-search .search-autocomplete { z-index:999; }
 .header .form-search .search-autocomplete ul { border:1px solid #ddd; background-color:#fff; }
 .header .form-search .search-autocomplete li { padding:3px; border-bottom:1px solid #ddd; cursor:pointer; }
@@ -607,7 +613,7 @@ tr.summary-details-excluded { font-style:italic; }
 .products-list .product-image { float:left; width:135px; height:135px; margin:0 0 10px; }
 .products-list .product-shop { display:block; margin-left:10px; }
 .products-list .product-shop a { color:#000; } 
-.products-list .product-name { background:url(../images/txt.png) no-repeat; padding-left:25px; margin:2px 0; width:530px; float:left; }
+.products-list .product-name { background:url(../images/txt.png) no-repeat; padding-left:25px; margin:2px 0; width:450px; float:left; }
 .products-list .created-at { padding-left:25px; float:left; }
 .products-list .price-box { float:left; margin:3px 13px 5px 0; }
 .products-list .availability { float:left; margin:3px 0 0; }
@@ -624,7 +630,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Rating */
 .no-rating a { margin:0; color:#000; }
 
-.ratings { font-size:11px; line-height:1.25; margin:7px 0; }
+.ratings { float:left; }
 .ratings strong { float:left; margin:1px 3px 0 0; }
 .ratings .rating-links { margin:0; }
 .ratings .rating-links .separator { margin:0 2px; }
@@ -793,6 +799,8 @@ tr.summary-details-excluded { font-style:italic; }
 .product-view .product-shop {}
 .product-view .product-name { float:left; }
 .product-view .product-ratings { float:right; padding-right:10px; }
+.new-post { text-align:right; padding: 20px 10px; }
+.new-thread {}
 .col1-layout .product-view .product-shop { float:right; width:700px; }
 .col3-layout .product-view .product-shop { float:none; width:auto; }
 .product-view .product-name {}
@@ -838,7 +846,7 @@ tr.summary-details-excluded { font-style:italic; }
 .product-view .box-tags {}
 .product-view .box-tags .form-add label { float:left; }
 .product-view .box-tags .form-add .input-box { float:left; width:260px; margin:0 5px; }
-.product-view .box-tags .form-add input.input-text { width:254px; }
+.product-view .box-tags .form-add input.input-text { width:690px; }
 .product-view .box-tags .form-add p { clear:both; }
 
 /* Block: Reviews */
